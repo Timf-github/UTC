@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Organizer</title>
+  <style>
+    /* CSS styles go here */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+    }
+  </style>
+  <script>
+    // JavaScript code goes here
+    function addRow() {
+      var table = document.getElementById("orderTable");
+      var newRow = table.insertRow();
+
+      var cell1 = newRow.insertCell();
+      cell1.innerHTML = '<input type="date" name="date[]">';
+
+      var cell2 = newRow.insertCell();
+      cell2.innerHTML = '<input type="text" name="poNumber[]">';
+
+      var cell3 = newRow.insertCell();
+      cell3.innerHTML = '<input type="text" name="refNumber[]">';
+
+      var cell4 = newRow.insertCell();
+      cell4.innerHTML = '<input type="text" name="itemName[]">';
+
+      var cell5 = newRow.insertCell();
+      cell5.innerHTML = '<input type="text" name="itemModel[]">';
+
+      var cell6 = newRow.insertCell();
+      cell6.innerHTML = '<input type="number" name="price[]">';
+
+      var cell7 = newRow.insertCell();
+      cell7.innerHTML = '<input type="number" name="quantity[]">';
+
+      var cell8 = newRow.insertCell();
+      cell8.innerHTML = '<input type="date" name="etd[]">';
+
+      var cell9 = newRow.insertCell();
+      cell9.innerHTML = '<input type="text" name="note[]">';
+    }
+  </script>
+</head>
+<body>
+  <h1>Order Organizer</h1>
+
+  <form>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>PO Number</th>
+        <th>Ref Number</th>
+        <th>Item Name</th>
+        <th>Item Model</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>ETD</th>
+        <th>Note</th>
+      </tr>
+      <tr>
+        <td><input type="date" name="date[]"></td>
+        <td><input type="text" name="poNumber[]"></td>
+        <td><input type="text" name="refNumber[]"></td>
+        <td><input type="text" name="itemName[]"></td>
+        <td><input type="text" name="itemModel[]"></td>
+        <td><input type="number" name="price[]"></td>
+        <td><input type="number" name="quantity[]"></td>
+        <td><input type="date" name="etd[]"></td>
+        <td><input type="text" name="note[]"></td>
+      </tr>
+    </table>
+    <button type="button" onclick="addRow()">Add Row</button>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
